@@ -1,0 +1,104 @@
+record(ai, "TST:PPM:SPM:VOLT_RBV"){
+  field(PREC, "3")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/Main.fbPPM.stPPM.stPowerMeter.fVoltage?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+}
+
+record(ai, "TST:PPM:SPM:VOLT_BUFFER_RBV"){
+  field(PREC, "3")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/Main.fbPPM.stPPM.stPowerMeter.fVoltageBuffer?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+}
+
+record(ai, "TST:PPM:SPM:MJ_RBV"){
+  field(PREC, "3")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/Main.fbPPM.stPPM.stPowerMeter.fCalibMJ?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+}
+
+record(ai, "TST:PPM:SPM:MJ_BUFFER_RBV"){
+  field(PREC, "3")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/Main.fbPPM.stPPM.stPowerMeter.fCalibMJBuffer?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+}
+
+record(longin, "TST:PPM:SPM:STC_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/Main.fbPPM.stPPM.stPowerMeter.fThermoCouple?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+}
+
+record(longin, "TST:PPM:YAG:STC_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/Main.fbPPM.stPPM.fYagThermoCouple?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+}
+
+record(bi, "TST:PPM:GIGE:PWR_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(ONAM, "One")
+  field(ZNAM, "Zero")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/Main.fbPPM.stPPM.stGige.bGigePower?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+}
+
+record(bo, "TST:PPM:GIGE:PWR"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(ONAM, "One")
+  field(ZNAM, "Zero")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.fbPPM.stPPM.stGige.bGigePower=")
+}
+
+record(ai, "TST:PPM:GIGE:CIL_RBV"){
+  field(PREC, "3")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/Main.fbPPM.stPPM.stGige.fIlluminatorPercent?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+}
+
+record(ao, "TST:PPM:GIGE:CIL"){
+  field(PREC, "3")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.fbPPM.stPPM.stGige.fIlluminatorPercent=")
+}
+
+record(longin, "TST:PPM:CFM:MA_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/Main.fbPPM.stPPM.stFlowMeter.fRaw?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+}
+
+record(ai, "TST:PPM:CFM:FLOW_RBV"){
+  field(PREC, "3")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/Main.fbPPM.stPPM.stFlowMeter.fFlowRate?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+}
