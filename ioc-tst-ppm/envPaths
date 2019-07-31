@@ -1,4 +1,5 @@
 epicsEnvSet("IOC","ioc-tst-ppm")
+epicsEnvSet("LOCAL","/reg/neh/home/zlentz/pytmc_tests/plc-tst-ppm/ioc-tst-ppm")
 epicsEnvSet("TOP","/reg/neh/home/zlentz/pytmc_tests/ads-ioc")
 epicsEnvSet("EPICS_SITE_TOP","/reg/g/pcds/epics/")
 epicsEnvSet("EPICS_MODULES","/reg/g/pcds/epics//R7.0.2-2.0/modules")

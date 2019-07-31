@@ -1,4 +1,4 @@
-#!../../../bin/rhel7-x86_64/adsIoc
+#!../../ads-ioc/bin/rhel7-x86_64/adsIoc
 
 < envPaths
 epicsEnvSet("IOCNAME", "MicroTestStandPPM" )
@@ -29,7 +29,6 @@ epicsEnvSet("PREFIX",        "TST:PPM:")
 epicsEnvSet("ECM_NUMAXES",   "1")
 epicsEnvSet("NUMAXES",       "1")
 
-adsAsynPortDriverConfigure("$(ASYN_PORT)","$(IPADDR)","$(AMSID)","$(IPPORT)", 1000, 0, 0, 50, 100, 1000, 0)
 EthercatMCCreateController("$(MOTOR_PORT)", "$(ASYN_PORT)", "$(NUMAXES)", "200", "1000")
 
 #define ASYN_TRACE_ERROR     0x0001
@@ -72,12 +71,14 @@ dbLoadRecords("EthercatMC.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR
 dbLoadRecords("EthercatMCreadback.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), R=$(MOTOR_NAME)-, MOTOR_PORT=$(MOTOR_PORT), ASYN_PORT=$(ASYN_PORT), AXIS_NO=$(AXIS_NO), DESC=$(DESC), PREC=$(PREC) ")
 dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), MOTOR_PORT=$(MOTOR_PORT), AXIS_NO=$(AXIS_NO), PREC=3")
 
-dbLoadRecords("MicroTestStandPPM.db", "")
+cd "$(LOCAL)"
+
+dbLoadRecords("MicroTestStandPPM.db", "PORT=$(ASYN_PORT)")
 
 cd "$(TOP)"
 
-dbLoadRecords("db/iocAdmin.db", "P=IOC:TST:PPM:,IOC=IOC:TST:PPM:" )
-dbLoadRecords("db/save_restoreStatus.db", "P=IOC:TST:PPM:,IOC=MicroTestStandPPM" )
+dbLoadRecords("db/iocSoft.db", "IOC=IOC:TST:PPM:" )
+dbLoadRecords("db/save_restoreStatus.db", "P=IOC:TST:PPM:" )
 
 # Setup autosave
 set_savefile_path( "$(IOC_DATA)/$(IOC)/autosave" )

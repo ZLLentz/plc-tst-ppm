@@ -7,7 +7,7 @@ record(ai, "TST:PPM:SPM:VOLT_RBV"){
   field(SCAN, "I/O Intr")
 }
 
-record(ai, "TST:PPM:SPM:VOLT_BUFFER_RBV"){
+record(waveform, "TST:PPM:SPM:VOLT_BUFFER_RBV"){
   field(PREC, "3")
   field(PINI, "1")
   field(TSE, "-2")
@@ -27,7 +27,7 @@ record(ai, "TST:PPM:SPM:MJ_RBV"){
   field(SCAN, "I/O Intr")
 }
 
-record(ai, "TST:PPM:SPM:MJ_BUFFER_RBV"){
+record(waveform, "TST:PPM:SPM:MJ_BUFFER_RBV"){
   field(PREC, "3")
   field(PINI, "1")
   field(TSE, "-2")
@@ -57,8 +57,8 @@ record(longin, "TST:PPM:YAG:STC_RBV"){
 record(bi, "TST:PPM:GIGE:PWR_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ONAM, "One")
-  field(ZNAM, "Zero")
+  field(ONAM, "On")
+  field(ZNAM, "Off")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/Main.fbPPM.stPPM.stGige.bGigePower?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
@@ -67,8 +67,8 @@ record(bi, "TST:PPM:GIGE:PWR_RBV"){
 record(bo, "TST:PPM:GIGE:PWR"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ONAM, "One")
-  field(ZNAM, "Zero")
+  field(ONAM, "On")
+  field(ZNAM, "Off")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.fbPPM.stPPM.stGige.bGigePower=")
 }
