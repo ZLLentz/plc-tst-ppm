@@ -12,12 +12,21 @@ VAR
 		pv: TST
 	'}
 	fbPPM: FB_PPM;
+	
+	{attribute 'pytmc' := '
+		pv: TST:PPM:MMS:Y:ENC_RAW
+	'}
+	iAdjustedEncoder: UINT;
+	iRawEncoder AT %I*: ULINT;
+	iMaxLINT: ULINT := 18446744073709551615;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[fbPPM(stYStage := M1);]]></ST>
+      <ST><![CDATA[fbPPM(stYStage := M1);
+iAdjustedEncoder :=  ULINT_TO_UINT(iMaxLINT - iRawEncoder);]]></ST>
     </Implementation>
     <LineIds Name="Main">
+      <LineId Id="21" Count="0" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>

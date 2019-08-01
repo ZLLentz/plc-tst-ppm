@@ -960,7 +960,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.fbPPM.stPPM.stFlowMeter.fRaw</Name>
-					<Type>LREAL</Type>
+					<Type>INT</Type>
 				</Var>
 				<Var>
 					<Name>Main.fbPPM.fbYStage.fbDriveVirtual.MasterAxis.NcToPlc</Name>
@@ -1011,17 +1011,13 @@ External Setpoint Generation:
 						</Comment>
 					</SubVar>
 				</Var>
+				<Var>
+					<Name>Main.iRawEncoder</Name>
+					<Type>ULINT</Type>
+				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
 				<Name>PlcTask Outputs</Name>
-				<Var>
-					<Name>Main.M1.Axis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>Main.M1.bBrakeRelease</Name>
-					<Type>BOOL</Type>
-				</Var>
 				<Var>
 					<Name>Main.fbPPM.stPPM.stGige.bGigePower</Name>
 					<Type>BOOL</Type>
@@ -1029,6 +1025,14 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.fbPPM.stPPM.stGige.iIlluminatorINT</Name>
 					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>Main.M1.Axis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>Main.M1.bBrakeRelease</Name>
+					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.fbPPM.fbYStage.fbDriveVirtual.MasterAxis.PlcToNc</Name>
@@ -1051,6 +1055,9 @@ External Setpoint Generation:
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 4 (EK1100)^Term 5 (EL7041)">
 				<Link VarA="PlcTask Inputs^Main.M1.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2"/>
 				<Link VarA="PlcTask Inputs^Main.M1.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 4 (EK1100)^Term 6 (EL5042)">
+				<Link VarA="PlcTask Inputs^Main.iRawEncoder" VarB="FB Inputs Channel 1^Position"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 4 (EK1100)^Term 7 (EL2004)">
 				<Link VarA="PlcTask Outputs^Main.M1.bBrakeRelease" VarB="Channel 1^Output"/>

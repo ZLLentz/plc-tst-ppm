@@ -106,3 +106,11 @@ record(ai, "TST:PPM:CFM:FLOW_RBV"){
   field(DTYP, "asynFloat64")
   field(SCAN, "I/O Intr")
 }
+
+record(longin, "TST:PPM:MMS:Y:ENC_RAW"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/Main.iAdjustedEncoder?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+}
